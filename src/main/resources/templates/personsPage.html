@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title th:utext="${title}"></title>
+   </head>
+    
+   <style>
+      table th, table td {
+         padding: 5px;
+      }
+      .message {
+         color: blue;
+      }
+   </style>
+    
+   <body>
+    
+      <th:block th:include="/menu"></th:block>    
+      <h2>Persons</h2>
+       
+    
+      <table border="1">
+            <tr>
+               <th>Name</th>
+               <th>PPSN</th>
+               <th>DOB</th>
+               <th>Mobile Phone</th>
+            </tr>
+            <tr th:each ="person : ${persons}">
+               <td th:utext="${person.name}">...</td>
+               <td th:utext="${person.ppsNumber}">...</td>
+               <td th:utext="${person.dob}">...</td>
+               <td th:utext="${person.phoneNumber}">...</td>
+            </tr>
+      </table>
+       
+   </body>
+</html>
